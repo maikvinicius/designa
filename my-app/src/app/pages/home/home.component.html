@@ -1,0 +1,59 @@
+<h1>Home Page</h1>
+
+<hr />
+
+<p>Olá {{name}} sua idade é {{age}}</p>
+<strong *ngIf="age > 18">Você já é adulto!</strong>
+<ul>
+  <li *ngFor="let movie of movies">{{movie}}</li>
+</ul>
+
+<hr />
+
+<h1 *ngIf="showTitle">Page title</h1>
+<button (click)="toggleTitle()">Toggle title</button>
+
+<hr />
+
+<h1>Home Page</h1>
+<a [routerLink]="['/sobre']">Sobre</a>
+
+<hr />
+
+<div *ngIf="user">
+  <p>Id:{{user.id}}</p>
+  <p>Nome:{{user.name}}</p>
+  <p>Email:{{user.email}}</p>
+  <p>É administrador: {{user.admin ? 'sim' : 'não'}}</p>
+</div>
+
+<hr />
+
+<p>Cursos: </p>
+<ul>
+  <li>
+    <a [routerLink]="['/cursos']">Todos os Cursos</a>
+  </li>
+</ul>
+
+<hr />
+
+<input type="text" [(ngModel)]="name">
+
+<hr />
+
+<form [formGroup]="form">
+  <input type="text" formControlName="name">
+  <input type="text" formControlName="email">
+  <select formControlName="role">
+    <option value="dev">Developer</option>
+    <option value="designer">Designer</option>
+    <option value="pm">Project Manager</option>
+  </select>
+</form>
+
+<button (click)="save()">Formulário é válido?</button>
+
+<hr />
+
+<a [routerLink]="['/tasks']">Tasks</a>
